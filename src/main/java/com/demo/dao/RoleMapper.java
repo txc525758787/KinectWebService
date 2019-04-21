@@ -1,8 +1,8 @@
 package com.demo.dao;
 
-import com.demo.dao.mybatis.BaseDao;
+import com.demo.imapper.BaseMapper;
 import com.demo.model.Role;
 
-public interface RoleMapper extends BaseDao<Role,Integer> {
+public interface RoleMapper extends BaseMapper<Role,Integer> {
 
 }

@@ -1,8 +1,7 @@
 package com.demo.dao;
 
-import com.demo.dao.mybatis.BaseDao;
 import com.demo.model.User;
+import com.demo.imapper.BaseMapper;
 
-public interface UserMapper extends BaseDao<User, Integer> {
-
+public interface UserMapper extends BaseMapper<User,Integer> {
 }

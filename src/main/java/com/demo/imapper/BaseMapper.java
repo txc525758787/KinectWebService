@@ -1,8 +1,9 @@
-package com.demo.dao.mybatis;
+package com.demo.imapper;
+
 
 import java.io.Serializable;
 
-public interface BaseDao<T,ID extends Serializable>{
+public interface BaseMapper<T,ID extends Serializable>{
 
 	public int deleteByPrimaryKey(ID pk);
 
@@ -12,7 +13,7 @@ public interface BaseDao<T,ID extends Serializable>{
 
 	public T selectByPrimaryKey(ID pk);
 
-	public int updateByPrimaryKeySelective(T t);
+	public int updateSelective(T t);
 
-	public int updateByPrimaryKey(T t);
+	public int update(T t);
 }

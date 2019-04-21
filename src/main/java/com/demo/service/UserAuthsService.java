@@ -1,4 +1,7 @@
 package com.demo.service;
 
-public interface UserAuthsService {
+import com.demo.model.UserAuths;
+
+public interface UserAuthsService extends IService<UserAuths,Integer> {
+
 }

@@ -1,5 +1,7 @@
 package com.demo.service;
 
-public interface UserService {
+import com.demo.model.User;
+
+public interface UserService extends IService<User,Integer>{
 
 }

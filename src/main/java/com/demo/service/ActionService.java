@@ -1,5 +1,7 @@
 package com.demo.service;
 
-public interface ActionService {
-	 public int getActionById();
+import com.demo.model.Action;
+
+public interface ActionService extends IService<Action,Integer>{
+
 }

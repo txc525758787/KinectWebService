@@ -3,97 +3,83 @@ package com.demo.model;
 import java.util.Date;
 
 public class UserAuths {
-	private Integer id;
+    private Integer id;
 
-	private Integer userId;
+    private Integer userId;
 
-	private String identifyType;
+    private String identifyType;
 
-	private String identify;
+    private String identify;
 
-	private String credential;
+    private String credential;
 
-	private Date lastLoginTime;
+    private Date lastLoginTime;
 
-	private Date createTime;
+    private Date createTime;
 
-	private Integer isEnable;
+    private Integer isEnable;
 
-	public UserAuths(){
+    public Integer getId() {
+        return id;
+    }
 
-	}
-	public UserAuths(Integer id, Integer userId, String identifyType, String identify, String credential, Date lastLoginTime, Date createTime, Integer isEnable) {
-		this.id = id;
-		this.userId = userId;
-		this.identifyType = identifyType;
-		this.identify = identify;
-		this.credential = credential;
-		this.lastLoginTime = lastLoginTime;
-		this.createTime = createTime;
-		this.isEnable = isEnable;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	public Integer getId() {
-		return id;
-	}
+    public Integer getUserId() {
+        return userId;
+    }
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
 
-	public Integer getUserId() {
-		return userId;
-	}
+    public String getIdentifyType() {
+        return identifyType;
+    }
 
-	public void setUserId(Integer userId) {
-		this.userId = userId;
-	}
+    public void setIdentifyType(String identifyType) {
+        this.identifyType = identifyType;
+    }
 
-	public String getIdentifyType() {
-		return identifyType;
-	}
+    public String getIdentify() {
+        return identify;
+    }
 
-	public void setIdentifyType(String identifyType) {
-		this.identifyType = identifyType;
-	}
+    public void setIdentify(String identify) {
+        this.identify = identify;
+    }
 
-	public String getIdentify() {
-		return identify;
-	}
+    public String getCredential() {
+        return credential;
+    }
 
-	public void setIdentify(String identify) {
-		this.identify = identify;
-	}
+    public void setCredential(String credential) {
+        this.credential = credential;
+    }
 
-	public String getCredential() {
-		return credential;
-	}
+    public Date getLastLoginTime() {
+        return lastLoginTime;
+    }
 
-	public void setCredential(String credential) {
-		this.credential = credential;
-	}
+    public void setLastLoginTime(Date lastLoginTime) {
+        this.lastLoginTime = lastLoginTime;
+    }
 
-	public Date getLastLoginTime() {
-		return lastLoginTime;
-	}
+    public Date getCreateTime() {
+        return createTime;
+    }
 
-	public void setLastLoginTime(Date lastLoginTime) {
-		this.lastLoginTime = lastLoginTime;
-	}
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
 
-	public Date getCreateTime() {
-		return createTime;
-	}
+    public Integer getIsEnable() {
+        return isEnable;
+    }
 
-	public void setCreateTime(Date createTime) {
-		this.createTime = createTime;
-	}
-
-	public Integer getIsEnable() {
-		return isEnable;
-	}
-
-	public void setIsEnable(Integer isEnable) {
-		this.isEnable = isEnable;
-	}
+    public void setIsEnable(Integer isEnable) {
+        this.isEnable = isEnable;
+    }
 }

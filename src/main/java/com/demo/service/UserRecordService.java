@@ -1,4 +1,7 @@
 package com.demo.service;
 
-public interface UserRecordService {
+import com.demo.model.UserRecord;
+
+public interface UserRecordService extends IService<UserRecord,Integer> {
+
 }

@@ -9,17 +9,6 @@ public class User {
 
     private Integer roleId;
 
-    public User(){
-
-    }
-
-    public User(Integer id, String nickname, String avatar, Integer roleId) {
-        this.id = id;
-        this.nickname = nickname;
-        this.avatar = avatar;
-        this.roleId = roleId;
-    }
-
     public Integer getId() {
         return id;
     }

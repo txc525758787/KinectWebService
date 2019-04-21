@@ -1,4 +1,7 @@
 package com.demo.service;
 
-public interface RoleService {
+import com.demo.model.Role;
+
+public interface RoleService extends IService<Role,Integer>{
+
 }

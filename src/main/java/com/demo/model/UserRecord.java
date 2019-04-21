@@ -17,19 +17,6 @@ public class UserRecord {
 
     private Integer isCorrect;
 
-    public UserRecord(){
-
-    }
-    public UserRecord(Integer id, Integer userId, String type, Integer actionId, Date startTime, Date endTime, Integer isCorrect) {
-        this.id = id;
-        this.userId = userId;
-        this.type = type;
-        this.actionId = actionId;
-        this.startTime = startTime;
-        this.endTime = endTime;
-        this.isCorrect = isCorrect;
-    }
-
     public Integer getId() {
         return id;
     }
