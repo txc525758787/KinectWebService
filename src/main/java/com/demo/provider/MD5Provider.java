@@ -1,5 +1,7 @@
 package com.demo.provider;
 
+import com.demo.utils.StringUtils;
+
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -18,7 +20,7 @@ public class MD5Provider {
 	 * @return
 	 */
 	public static String encrypt(String password) {
-		if (("").equals(password)||password == null) {
+		if (StringUtils.isBlank(password)) {
 			throw new RuntimeException("密码不能为空");
 		}
 		try {

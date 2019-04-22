@@ -7,9 +7,9 @@ public class UserAuths {
 
     private Integer userId;
 
-    private String identifyType;
+    private String identityType;
 
-    private String identify;
+    private String identity;
 
     private String credential;
 
@@ -18,6 +18,20 @@ public class UserAuths {
     private Date createTime;
 
     private Integer isEnable;
+
+    public UserAuths(){
+
+    }
+    public UserAuths(Integer id, Integer userId, String identityType, String identity, String credential, Date lastLoginTime, Date createTime, Integer isEnable) {
+        this.id = id;
+        this.userId = userId;
+        this.identityType = identityType;
+        this.identity = identity;
+        this.credential = credential;
+        this.lastLoginTime = lastLoginTime;
+        this.createTime = createTime;
+        this.isEnable = isEnable;
+    }
 
     public Integer getId() {
         return id;
@@ -35,20 +49,20 @@ public class UserAuths {
         this.userId = userId;
     }
 
-    public String getIdentifyType() {
-        return identifyType;
+    public String getIdentityType() {
+        return identityType;
     }
 
-    public void setIdentifyType(String identifyType) {
-        this.identifyType = identifyType;
+    public void setIdentityType(String identityType) {
+        this.identityType = identityType;
     }
 
-    public String getIdentify() {
-        return identify;
+    public String getIdentity() {
+        return identity;
     }
 
-    public void setIdentify(String identify) {
-        this.identify = identify;
+    public void setIdentity(String identity) {
+        this.identity = identity;
     }
 
     public String getCredential() {

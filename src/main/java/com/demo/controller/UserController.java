@@ -18,4 +18,9 @@ public class UserController {
 		return userService.selectByKey(key);
 	}
 
+	@GetMapping("/success")
+	public String toSuccessPage(){
+		return "test";
+	}
+
 }

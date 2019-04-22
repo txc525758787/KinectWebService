@@ -20,11 +20,11 @@
     delete from sys_user
     where id = #{id,jdbcType=INTEGER}
   </delete>
-    <insert id="insert" parameterType="com.demo.model.User">
+    <insert id="insert" parameterType="com.demo.model.User" useGeneratedKeys="true" keyProperty="id">
     insert into sys_user (id, nickname, avatar, role_id)
     values (#{id,jdbcType=INTEGER}, #{nickname,jdbcType=VARCHAR}, #{avatar,jdbcType=VARCHAR}, #{roleId,jdbcType=INTEGER})
   </insert>
-    <insert id="insertSelective" parameterType="com.demo.model.User">
+    <insert id="insertSelective" parameterType="com.demo.model.User" useGeneratedKeys="true" keyProperty="id">
         insert into sys_user
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="id != null">

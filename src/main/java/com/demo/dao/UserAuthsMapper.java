@@ -5,4 +5,6 @@ import com.demo.model.UserAuths;
 
 public interface UserAuthsMapper extends BaseMapper<UserAuths,Integer> {
 
+	public UserAuths selectByIdentity(String identity);
+
 }

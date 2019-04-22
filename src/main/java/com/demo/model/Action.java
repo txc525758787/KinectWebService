@@ -9,6 +9,17 @@ public class Action {
 
     private String url;
 
+    public Action(){
+
+    }
+
+    public Action(Integer id, String actionType, String name, String url) {
+        this.id = id;
+        this.actionType = actionType;
+        this.name = name;
+        this.url = url;
+    }
+
     public Integer getId() {
         return id;
     }

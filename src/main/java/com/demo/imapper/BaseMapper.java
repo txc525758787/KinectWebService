@@ -1,9 +1,8 @@
 package com.demo.imapper;
 
 
-import java.io.Serializable;
 
-public interface BaseMapper<T,ID extends Serializable>{
+public interface BaseMapper<T,ID>{
 
 	public int deleteByPrimaryKey(ID pk);
 

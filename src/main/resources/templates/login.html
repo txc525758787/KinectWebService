@@ -8,7 +8,8 @@
     <link rel="icon" href="">
     <title>Signin Template for Bootstrap</title>
     <script src="/static/js/jquery-3.4.0.min.js"></script>
-    <script src="/static/js/bootstrap.min.js"></script>2
+    <script src="/static/js/bootstrap.min.js"></script>
+    2
     <script src="/static/js/bootstrap.bundle.min.js"></script>
     <script src="/static/js/form-to-json.js"></script>
 
@@ -21,37 +22,36 @@
 
 <body class="text-center">
 <form class="form-signin" id="test_form">
-    <!--<img class="mb-4 rounded" src="/static/img/avatar/admin.jpg" alt="用户头像" width="72" height="72">-->
-    <!--<h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>-->
-    <label for="userId" class="sr-only">Email address</label>
-    <input name="id" type="number" id="userId" class="form-control" placeholder="Id" required autofocus>
-    <input name="name" type="text" id="userName" class="form-control" placeholder="Id" required autofocus>
-    <input name="password" type="password" id="userPassword" class="form-control" placeholder="Password" required>
-    <input name="age" type="number" id="userAge" class="form-control" placeholder="Password" required>
+    <img class="mb-4 rounded" src="/static/img/avatar/admin.jpg" alt="用户头像" width="72" height="72">
+    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+    <input name="identity" type="text" id="identity" class="form-control" placeholder="手机号/邮箱" required autofocus>
+    <input name="credential" type="password" id="credential" class="form-control" placeholder="密码" required autofocus>
     <div class="checkbox mb-3">
         <label>
             <input type="checkbox" value="remember-me"> Remember me
         </label>
     </div>
-    <button class="btn btn-lg btn-primary btn-block" type="button" onclick="getUser()">Sign in</button>
+    <button class="btn btn-lg btn-primary btn-block" type="button" onclick="login()">Sign in</button>
     <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
 </form>
 <script type="text/javascript">
-    function getUser() {
+    function login() {
 
         $.ajax({
             type: "POST",
             dataType: "json",
-            url: "/user/add",
+            url: "/login/doLogin",
             contentType: "application/json",
             data: JSON.stringify($('#test_form').serializeJson()),
             success: function (data) {
-                if(data.id==110){
-                    window.location.href='/user/showUser';
+                if (data.code == 200) {
+                    window.location.href = '/user/success';
+                } else {
+                    alert(data.message);
                 }
             },
             error: function (data) {
-                alert("error"+data.toString());
+                alert("error" + data.toString());
             }
         });
 
