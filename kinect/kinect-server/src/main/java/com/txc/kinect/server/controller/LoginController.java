@@ -1,6 +1,7 @@
 package com.txc.kinect.server.controller;
 
-import com.txc.kinect.mvc.model.Result;
+import com.txc.kinect.mvc.controller.BaseController;
+import com.txc.kinect.mvc.model.HttpResult;
 import com.txc.kinect.server.model.UserAuths;
 import com.txc.kinect.server.service.UserAuthsService;
 import org.springframework.stereotype.Controller;
@@ -10,7 +11,7 @@ import javax.annotation.Resource;
 
 @Controller
 @RequestMapping("/login")
-public class LoginController {
+public class LoginController extends BaseController {
 
 	@Resource
 	UserAuthsService userAuthsService;
@@ -24,8 +25,8 @@ public class LoginController {
 
 	@PostMapping("/doLogin")
 	public @ResponseBody
-	Result doLogin(@RequestBody UserAuths userAuths){
-		return userAuthsService.login(userAuths);
+	HttpResult doLogin(@RequestBody UserAuths userAuths){
+		return null;
 	}
 
 

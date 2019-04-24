@@ -1,14 +1,18 @@
-package com.txc.kinect.server.service;
+package com.txc.kinect.mvc.service.impl;
 
 import com.txc.kinect.mvc.mapper.BaseMapper;
 import com.txc.kinect.mvc.service.IService;
-import org.springframework.beans.factory.annotation.Autowired;
 
 
-public  class BaseService<T, S> implements IService<T, S> {
+public abstract class BaseService<Mapper extends BaseMapper<T,S>,T, S> implements IService<T, S> {
 
-	@Autowired
-	protected BaseMapper<T,S> mapper;
+	protected Mapper mapper;
+
+	/**
+	 * 由子类注入相应的mapper
+	 * @param mapper
+	 */
+	public abstract void setMapper(Mapper mapper);
 
 	public T selectByKey(S key) {
 		return mapper.selectByPrimaryKey(key);

@@ -57,7 +57,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.txc.kinect.server.model.User" >
+  <update id="updateSelective" parameterType="com.txc.kinect.server.model.User" >
     update sys_user
     <set >
       <if test="nickname != null" >
@@ -72,7 +72,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.txc.kinect.server.model.User" >
+  <update id="update" parameterType="com.txc.kinect.server.model.User" >
     update sys_user
     set nickname = #{nickname,jdbcType=VARCHAR},
       avatar = #{avatar,jdbcType=VARCHAR},

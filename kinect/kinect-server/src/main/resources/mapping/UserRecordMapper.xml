@@ -80,7 +80,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.txc.kinect.server.model.UserRecord" >
+  <update id="updateSelective" parameterType="com.txc.kinect.server.model.UserRecord" >
     update sys_user_record
     <set >
       <if test="userId != null" >
@@ -104,7 +104,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.txc.kinect.server.model.UserRecord" >
+  <update id="update" parameterType="com.txc.kinect.server.model.UserRecord" >
     update sys_user_record
     set user_id = #{userId,jdbcType=INTEGER},
       type = #{type,jdbcType=VARCHAR},

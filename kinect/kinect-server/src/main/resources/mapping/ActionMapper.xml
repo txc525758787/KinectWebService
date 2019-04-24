@@ -57,7 +57,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.txc.kinect.server.model.Action" >
+  <update id="updateSelective" parameterType="com.txc.kinect.server.model.Action" >
     update sys_actions
     <set >
       <if test="actionType != null" >
@@ -72,7 +72,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.txc.kinect.server.model.Action" >
+  <update id="update" parameterType="com.txc.kinect.server.model.Action" >
     update sys_actions
     set action_type = #{actionType,jdbcType=VARCHAR},
       name = #{name,jdbcType=VARCHAR},

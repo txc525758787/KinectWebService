@@ -41,7 +41,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.txc.kinect.server.model.Role" >
+  <update id="updateSelective" parameterType="com.txc.kinect.server.model.Role" >
     update sys_role
     <set >
       <if test="description != null" >
@@ -50,7 +50,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.txc.kinect.server.model.Role" >
+  <update id="update" parameterType="com.txc.kinect.server.model.Role" >
     update sys_role
     set description = #{description,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}

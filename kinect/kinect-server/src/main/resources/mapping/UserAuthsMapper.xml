@@ -87,7 +87,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.txc.kinect.server.model.UserAuths" >
+  <update id="updateSelective" parameterType="com.txc.kinect.server.model.UserAuths" >
     update sys_user_auths
     <set >
       <if test="userId != null" >
@@ -114,7 +114,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.txc.kinect.server.model.UserAuths" >
+  <update id="update" parameterType="com.txc.kinect.server.model.UserAuths" >
     update sys_user_auths
     set user_id = #{userId,jdbcType=INTEGER},
       identity_type = #{identityType,jdbcType=VARCHAR},
@@ -125,4 +125,12 @@
       is_enable = #{isEnable,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="selectByIdentity" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    from sys_user_auths
+    where identity = #{identity,jdbcType=VARCHAR}
+  </select>
+
 </mapper>

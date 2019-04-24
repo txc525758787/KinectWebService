@@ -1,11 +1,21 @@
 package com.txc.kinect.server.service.impl;
 
+import com.txc.kinect.mvc.service.impl.BaseService;
+import com.txc.kinect.server.mapper.UserRecordMapper;
 import com.txc.kinect.server.model.UserRecord;
-import com.txc.kinect.server.service.BaseService;
 import com.txc.kinect.server.service.UserRecordService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import javax.annotation.Resource;
 
 @Service
-public class UserRecordServiceImpl extends BaseService<UserRecord,Integer> implements UserRecordService {
+@Transactional
+public class UserRecordServiceImpl extends BaseService<UserRecordMapper,UserRecord,Integer> implements UserRecordService {
 
+	@Override
+	@Resource
+	public void setMapper(UserRecordMapper userRecordMapper) {
+		this.mapper = userRecordMapper;
+	}
 }

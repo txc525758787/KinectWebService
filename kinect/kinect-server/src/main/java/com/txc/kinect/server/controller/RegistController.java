@@ -1,6 +1,6 @@
 package com.txc.kinect.server.controller;
 
-import com.txc.kinect.mvc.model.Result;
+import com.txc.kinect.mvc.model.HttpResult;
 import com.txc.kinect.server.model.UserAuths;
 import com.txc.kinect.server.service.RegistService;
 import org.springframework.stereotype.Controller;
@@ -20,9 +20,9 @@ public class RegistController {
 
 	@PostMapping("/regist")
 	public @ResponseBody
-	Result userRegist(@RequestBody UserAuths register){
+	HttpResult userRegist(@RequestBody UserAuths register){
 		registService.regist(register);
-		return Result.createSuccessResult();
+		return HttpResult.createSuccessResult();
 	}
 
 

@@ -13,6 +13,7 @@ import javax.annotation.Resource;
 import java.util.Date;
 
 @Service
+@Transactional
 public class RegistServiceImpl implements RegistService {
 
 	@Resource
@@ -21,8 +22,8 @@ public class RegistServiceImpl implements RegistService {
 	UserAuthsService userAuthsService;
 
 	@Override
-	@Transactional
 	public void regist(UserAuths register) {
+
 		User user = new User();
 		//process user
 		user.setAvatar("/avatar/default.jpg");
