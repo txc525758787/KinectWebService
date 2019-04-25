@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service
 @Transactional
@@ -17,5 +18,10 @@ public class UserRecordServiceImpl extends BaseService<UserRecordMapper,UserReco
 	@Resource
 	public void setMapper(UserRecordMapper userRecordMapper) {
 		this.mapper = userRecordMapper;
+	}
+
+	@Override
+	public List<UserRecord> findRecordsByUserId(Integer userId) {
+		return mapper.findRecordsByUserId(userId);
 	}
 }

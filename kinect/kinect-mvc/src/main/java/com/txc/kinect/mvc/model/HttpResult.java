@@ -38,6 +38,8 @@ public class HttpResult {
 		return createResult(code);
 	}
 
+	public static HttpResult createFailResult(String message){return new HttpResult().setMessage(message);}
+
 	public static HttpResult createFailResult(int code, String message){
 		return createFailResult(code).setMessage(message);
 	}

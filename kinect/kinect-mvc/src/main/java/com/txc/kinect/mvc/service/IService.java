@@ -11,7 +11,7 @@ public interface IService<T,S> {
 	/**
 	 *
 	 */
-	int save(T model);
+	int insert(T model);
 
 	/**
 	 *

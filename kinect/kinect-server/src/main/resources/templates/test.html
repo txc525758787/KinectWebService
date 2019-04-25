@@ -3,8 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="/static/js/jquery-3.4.0.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/js/form-to-json.js"></script>
 </head>
 <body>
 SUCCESS!!
+
+<button onclick="getSession()">获取session</button>
+<p id="pid"></p>
+<script type="text/javascript">
+    function getSession() {
+
+        $.ajax({
+            type: "GET",
+            dataType: "json",
+            url: "/records/getRecords",
+            success: function (data) {
+                if (data.code == 200) {
+                    for(var i=0; i<data.data.length;i++){
+                        var record = data.data[i];
+                        document.getElementById("pid").innerText="["+record.id+","+record.userId+"]";
+                    }
+                }
+            },
+            error: function (data) {
+                alert("error" + data.toString());
+            }
+        });
+
+    }
+
+</script>
 </body>
 </html>

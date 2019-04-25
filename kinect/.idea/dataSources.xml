@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="kinect" uuid="299f7723-118d-4441-9c93-69ae760f64c9">
+    <data-source source="LOCAL" name="kinect" uuid="e0afbb67-5fd5-4859-a2ed-dc7e3a12f852">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>

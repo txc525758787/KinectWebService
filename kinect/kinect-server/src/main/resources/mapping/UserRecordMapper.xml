@@ -114,4 +114,12 @@
       is_correct = #{isCorrect,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="findRecordsByUserId" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select
+    <include refid="Base_Column_List" />
+    from sys_user_record
+    where user_id = #{userId,jdbcType=INTEGER}
+  </select>
+
 </mapper>

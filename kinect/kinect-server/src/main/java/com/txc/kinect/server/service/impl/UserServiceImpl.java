@@ -19,4 +19,15 @@ public class UserServiceImpl extends BaseService<UserMapper,User,Integer> implem
 	public void setMapper(UserMapper userMapper) {
 		this.mapper = userMapper;
 	}
+
+	@Override
+	public User createDefaultUser(String identity) {
+		User user = new User();
+		user.setNickname("用户"+identity);
+		user.setRoleId(1);
+		user.setAvatar("/avatar/default.jpg");
+		user.setRoleId(1);
+		this.insert(user);
+		return user;
+	}
 }

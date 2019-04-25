@@ -10,6 +10,11 @@
         <module name="kinect-server" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="kinect" target="1.5" />
+      <module name="kinect-mvc" target="1.5" />
+      <module name="kinect-server" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
