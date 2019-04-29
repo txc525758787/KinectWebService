@@ -21,17 +21,17 @@
 </head>
 
 <body class="text-center">
-<form class="form-signin" id="test_form">
+<form class="form-signin" id="test_form" onsubmit="login()">
     <img class="mb-4 rounded" src="/static/img/avatar/admin.jpg" alt="用户头像" width="72" height="72">
     <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-    <input name="identity" type="text" id="identity" class="form-control" placeholder="手机号/邮箱" required autofocus>
+    <input name="identity" type="text" id="identity" class="form-control" placeholder="手机号/邮箱" required>
     <input name="credential" type="password" id="credential" class="form-control" placeholder="密码" required autofocus>
     <div class="checkbox mb-3">
         <label>
             <input type="checkbox" value="remember-me"> Remember me
         </label>
     </div>
-    <button class="btn btn-lg btn-primary btn-block" type="button" onclick="login()">Sign in</button>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
     <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
 </form>
 <script type="text/javascript">

@@ -10,8 +10,9 @@
 </head>
 <body>
 SUCCESS!!
-
+123123
 <button onclick="getSession()">获取session</button>
+<a href="index.html">点我测试</a>
 <p id="pid"></p>
 <script type="text/javascript">
     function getSession() {
@@ -24,7 +25,7 @@ SUCCESS!!
                 if (data.code == 200) {
                     for(var i=0; i<data.data.length;i++){
                         var record = data.data[i];
-                        document.getElementById("pid").innerText="["+record.id+","+record.userId+"]";
+                        document.getElementById("pid").append("["+record.id+","+record.userId+"]");
                     }
                 }
             },

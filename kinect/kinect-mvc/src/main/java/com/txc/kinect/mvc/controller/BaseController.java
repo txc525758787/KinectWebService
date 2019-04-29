@@ -16,7 +16,7 @@ public abstract class BaseController {
 		return HttpResult.createFailResult(code);
 	}
 
-	protected HttpResult sresponseFail(String message) {
+	protected HttpResult responseFail(String message) {
 		return HttpResult.createFailResult(message);
 	}
 
