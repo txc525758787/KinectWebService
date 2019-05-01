@@ -3,38 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/bootstrap-table.min.css">
     <script src="/static/js/jquery-3.4.0.min.js"></script>
-    <script src="/static/js/bootstrap.min.js"></script>
     <script src="/static/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+
     <script src="/static/js/form-to-json.js"></script>
+    <script src="/static/js/bootstrap-table.min.js"></script>
 </head>
 <body>
-SUCCESS!!
-123123
-<button onclick="getSession()">获取session</button>
-<a href="index.html">点我测试</a>
+
 <p id="pid"></p>
+<div class="container">
+<table id="test_table" class="table-striped table mt-5 table-condensed">
+    <thead class="thead-dark"></thead>
+</table>
+</div>
+
 <script type="text/javascript">
-    function getSession() {
-
-        $.ajax({
-            type: "GET",
-            dataType: "json",
-            url: "/records/getRecords",
-            success: function (data) {
-                if (data.code == 200) {
-                    for(var i=0; i<data.data.length;i++){
-                        var record = data.data[i];
-                        document.getElementById("pid").append("["+record.id+","+record.userId+"]");
-                    }
-                }
-            },
-            error: function (data) {
-                alert("error" + data.toString());
+    $('#test_table').bootstrapTable({
+        url: '/records/getRecords',
+        method: 'GET',
+        cache: false,
+        pagination: true,
+        sidePagination: 'server',
+        pageNumber: 1,
+        pageSize: 6,
+        pageList: [5, 6, 10, 20],
+        queryParamsType: "",
+        queryParams: function (params) {
+            return {
+                pageNum: params.pageNumber,
+                pageSize: params.pageSize
             }
-        });
+        },
+        contentType: "application/x-www-form-urlencoded",
+        responseHandler: function (res) {
+            return {
+                total: res.data.dataLength,
+                rows: res.data.list
+            }
+        },
+        columns: [{
+            field: 'id',
+            title: '编号'
+        }, {
+            field: 'type',
+            title: '训练类型'
+        }, {
+            field: 'actionId',
+            title: '动作'
+        }, {
+            field: 'startTime',
+            title: '开始时间'
+        }, {
+            field: 'endTime',
+            title: '结束时间'
+        }, {
+            field: 'isCorrect',
+            title: '是否正确'
+        }
+        ]
+    });
 
-    }
 
 </script>
 </body>

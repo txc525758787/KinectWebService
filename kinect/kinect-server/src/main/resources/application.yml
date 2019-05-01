@@ -14,7 +14,12 @@ mybatis:
     typeAliasesPackage: com.txc.kinect.server.model
     mapperLocations: classpath:mapping/*.xml
 
-
+#pageHelper配置
+pagehelper:
+    helper-dialect: mysql
+    reasonable: true
+    support-methods-arguments: true
+    params: count=countSql
 ---
 #开发配置
 spring:

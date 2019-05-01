@@ -1,7 +1,10 @@
 package com.txc.kinect.server.controller;
 
+import com.github.pagehelper.PageHelper;
+
 import com.txc.kinect.mvc.controller.BaseController;
 import com.txc.kinect.mvc.model.HttpResult;
+import com.txc.kinect.mvc.model.PageInfo;
 import com.txc.kinect.server.model.UserRecord;
 import com.txc.kinect.server.service.UserRecordService;
 import com.txc.kinect.server.session.SpringUtil;
@@ -32,8 +35,14 @@ public class UserRecordController extends BaseController {
 
 	@GetMapping("/getRecords")
 	@ResponseBody
-	public HttpResult getRecords(){
+	public HttpResult getRecords(@RequestParam int pageNum, @RequestParam int pageSize){
+		//SpringUtil.getBean(UserSession.class).getUserId()
+
+		PageInfo<UserRecord> pageInfo = new PageInfo<>();
+		pageInfo.setDataLength(userRecordService.findRecordsByUserId(SpringUtil.getBean(UserSession.class).getUserId()).size());
+		PageHelper.startPage(pageNum,pageSize);
 		List<UserRecord> records = userRecordService.findRecordsByUserId(SpringUtil.getBean(UserSession.class).getUserId());
-		return responseOK(records);
+		pageInfo.setList(records);
+		return responseOK(pageInfo);
 	}
 }

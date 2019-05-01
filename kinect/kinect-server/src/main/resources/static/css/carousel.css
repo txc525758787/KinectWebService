@@ -8,6 +8,9 @@ body {
     color: #5a5a5a;
 }
 
+.modal{
+    top:100px;
+}
 
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */

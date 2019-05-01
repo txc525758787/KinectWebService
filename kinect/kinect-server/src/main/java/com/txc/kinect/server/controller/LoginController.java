@@ -25,7 +25,7 @@ public class LoginController extends BaseController {
 
 	@GetMapping
 	public String login(){
-		return "login";
+		return "index";
 	}
 
 

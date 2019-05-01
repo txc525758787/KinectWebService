@@ -1,5 +1,6 @@
 package com.txc.kinect.mvc.provider;
 
+import com.txc.kinect.mvc.exception.MapperException;
 import com.txc.kinect.mvc.utils.StringUtils;
 
 import java.math.BigInteger;
@@ -21,7 +22,7 @@ public class MD5Provider {
 	 */
 	public static String encrypt(String password) {
 		if (StringUtils.isBlank(password)) {
-			throw new RuntimeException("密码不能为空");
+			throw new MapperException("密码不能为空");
 		}
 		try {
 			return md5(new StringBuilder(password).append(SUFFIX).toString());
