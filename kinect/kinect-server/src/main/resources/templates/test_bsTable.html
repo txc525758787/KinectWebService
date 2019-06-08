@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/bootstrap-table.min.css">
+    <script src="/static/js/jquery-3.4.0.min.js"></script>
+    <script src="/static/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <script src="/static/js/form-to-json.js"></script>
+    <script src="/static/js/bootstrap-table.min.js"></script>
+</head>
+<body>
+
+<p id="pid"></p>
+<div class="container">
+
+<table id="test_table" class="table-striped table mt-5 table-condensed">
+    <thead class="thead-dark"></thead>
+</table>
+</div>
+
+<script type="text/javascript">
+    $('#test_table').bootstrapTable({
+        url: '/records/getRecords',
+        method: 'GET',
+        cache: false,
+        pagination: true,
+        sidePagination: 'server',
+        pageNumber: 1,
+        pageSize: 6,
+        pageList: [5, 6, 10, 20],
+        queryParamsType: "",
+        queryParams: function (params) {
+            return {
+                pageNum: params.pageNumber,
+                pageSize: params.pageSize
+            }
+        },
+        contentType: "application/x-www-form-urlencoded",
+        responseHandler: function (res) {
+            return {
+                total: res.data.total,
+                rows: res.data.rows
+            }
+        },
+        columns: [{
+            field: 'actionName',
+            title: '动作名称'
+        }, {
+            field: 'actionType',
+            title: '动作类型'
+        }, {
+            field: 'startTime',
+            title: '开始时间'
+        }, {
+            field: 'endTime',
+            title: '结束时间'
+        }, {
+            field: 'correctRate',
+            title: '正确率'
+        }
+        ]
+    });
+
+
+</script>
+</body>
+</html>

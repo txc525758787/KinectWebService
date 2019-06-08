@@ -1,6 +1,6 @@
 package com.txc.kinect.mvc.exception;
 
-import com.txc.kinect.mvc.model.HttpResultCode;
+import com.txc.kinect.mvc.model.HttpCode;
 
 
 public class MapperException extends RuntimeException{
@@ -9,7 +9,7 @@ public class MapperException extends RuntimeException{
 
 	public static final String MESSAGE = "数据库访问异常";
 
-	private int code = HttpResultCode.MapperError;
+	private int code = HttpCode.DATA_ACCESS_ERROR;
 
 	public MapperException(){
 		super(MESSAGE);

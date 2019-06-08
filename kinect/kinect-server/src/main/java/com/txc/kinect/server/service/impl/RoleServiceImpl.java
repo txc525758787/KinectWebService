@@ -11,7 +11,7 @@ import javax.annotation.Resource;
 
 @Service
 @Transactional
-public class RoleServiceImpl extends BaseService<RoleMapper,Role,Integer> implements RoleService {
+public class RoleServiceImpl extends BaseService<RoleMapper, Role, Integer> implements RoleService {
 
 	@Override
 	@Resource

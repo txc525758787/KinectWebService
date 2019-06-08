@@ -12,7 +12,7 @@ import java.util.List;
 
 @Service
 @Transactional
-public class UserRecordServiceImpl extends BaseService<UserRecordMapper,UserRecord,Integer> implements UserRecordService {
+public class UserRecordServiceImpl extends BaseService<UserRecordMapper, UserRecord, Integer> implements UserRecordService {
 
 	@Override
 	@Resource
@@ -21,7 +21,13 @@ public class UserRecordServiceImpl extends BaseService<UserRecordMapper,UserReco
 	}
 
 	@Override
-	public List<UserRecord> findRecordsByUserId(Integer userId) {
-		return mapper.findRecordsByUserId(userId);
+	public List<UserRecord> getRecordsByUserId(Integer userId) {
+		return mapper.getRecordsByUserId(userId);
 	}
+
+	@Override
+	public List<UserRecord> getRecordsInMonth(Integer userId) {
+		return mapper.getRecordsInMonth(userId);
+	}
+
 }

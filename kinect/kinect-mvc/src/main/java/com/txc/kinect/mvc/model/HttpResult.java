@@ -27,7 +27,7 @@ public class HttpResult {
 	}
 
 	public static HttpResult createSuccessResult() {
-		return createResult(HttpResultCode.SUCCESS);
+		return createResult(HttpCode.SUCCESS);
 	}
 
 	public static HttpResult createSuccessResult(Object data) {

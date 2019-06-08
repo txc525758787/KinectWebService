@@ -8,11 +8,12 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 
 @Service
 @Transactional
-public class UserServiceImpl extends BaseService<UserMapper,User,Integer> implements UserService {
+public class UserServiceImpl extends BaseService<UserMapper, User, Integer> implements UserService {
 
 	@Override
 	@Resource
@@ -23,11 +24,16 @@ public class UserServiceImpl extends BaseService<UserMapper,User,Integer> implem
 	@Override
 	public User createDefaultUser(String identity) {
 		User user = new User();
-		user.setNickname("用户"+identity);
+		user.setNickname("用户" + identity);
 		user.setRoleId(1);
 		user.setAvatar("/avatar/default.jpg");
 		user.setRoleId(1);
 		this.insert(user);
 		return user;
+	}
+
+	@Override
+	public List<User> getAllUser() {
+		return mapper.getAllUser();
 	}
 }

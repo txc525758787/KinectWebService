@@ -5,8 +5,9 @@ import com.txc.kinect.server.model.UserRecord;
 
 import java.util.List;
 
-public interface UserRecordService extends IService<UserRecord,Integer> {
+public interface UserRecordService extends IService<UserRecord, Integer> {
 
-	public List<UserRecord> findRecordsByUserId(Integer userId);
+	public List<UserRecord> getRecordsByUserId(Integer userId);
 
+	public List<UserRecord> getRecordsInMonth(Integer userId);
 }

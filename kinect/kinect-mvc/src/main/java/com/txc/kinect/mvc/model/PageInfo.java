@@ -4,31 +4,31 @@ import java.util.List;
 
 public class PageInfo<T> {
 
-	private int dataLength;
-	private List<T> list;
+	private int total;
+	private List<T> rows;
 
 	public PageInfo(){
 
 	}
 
-	public PageInfo(int dataLength, List<T> list) {
-		this.dataLength = dataLength;
-		this.list = list;
+	public PageInfo(int total, List<T> rows) {
+		this.total = total;
+		this.rows = rows;
 	}
 
-	public int getDataLength() {
-		return dataLength;
+	public int getTotal() {
+		return total;
 	}
 
-	public void setDataLength(int dataLength) {
-		this.dataLength = dataLength;
+	public void setTotal(int total) {
+		this.total = total;
 	}
 
-	public List<T> getList() {
-		return list;
+	public List<T> getRows() {
+		return rows;
 	}
 
-	public void setList(List<T> list) {
-		this.list = list;
+	public void setRows(List<T> rows) {
+		this.rows = rows;
 	}
 }

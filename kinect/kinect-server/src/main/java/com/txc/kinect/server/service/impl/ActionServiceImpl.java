@@ -8,14 +8,20 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service
 @Transactional
-public class ActionServiceImpl extends BaseService<ActionMapper,Action,Integer> implements ActionService {
+public class ActionServiceImpl extends BaseService<ActionMapper, Action, Integer> implements ActionService {
 
 	@Override
 	@Resource
 	public void setMapper(ActionMapper actionMapper) {
 		this.mapper = actionMapper;
+	}
+
+	@Override
+	public List<Action> getAllAction() {
+		return mapper.getAllAction();
 	}
 }

@@ -15,7 +15,7 @@
 
         <!--数据库链接地址账号密码-->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://127.0.0.1:3306/kinect_sys?serverTimezone=UTC"
+                        connectionURL="jdbc:mysql://localhost:3306/kinect_sys?serverTimezone=Hongkong"
                         userId="root"
                         password="Txc961213">
         </jdbcConnection>
@@ -38,19 +38,19 @@
         <javaClientGenerator type="XMLMAPPER" targetPackage="com.txc.kinect.server.mapper"
                              targetProject="src\main\java">
         </javaClientGenerator>
-        <table schema="kinect_sys" tableName="sys_user" domainObjectName="User"
+        <table schema="kinect_sys" tableName="user" domainObjectName="User"
                enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
                enableSelectByExample="false" selectByExampleQueryId="false"/>
-        <table schema="kinect_sys" tableName="sys_role" domainObjectName="Role"
+        <table schema="kinect_sys" tableName="role" domainObjectName="Role"
                enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
                enableSelectByExample="false" selectByExampleQueryId="false"/>
-        <table schema="kinect_sys" tableName="sys_actions" domainObjectName="Action"
+        <table schema="kinect_sys" tableName="action" domainObjectName="Action"
                enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
                enableSelectByExample="false" selectByExampleQueryId="false"/>
-        <table schema="kinect_sys" tableName="sys_user_auths" domainObjectName="UserAuths"
+        <table schema="kinect_sys" tableName="user_auth" domainObjectName="UserAuth"
                enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
                enableSelectByExample="false" selectByExampleQueryId="false"/>
-        <table schema="kinect_sys" tableName="sys_user_record" domainObjectName="UserRecord"
+        <table schema="kinect_sys" tableName="user_record" domainObjectName="UserRecord"
                enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
                enableSelectByExample="false" selectByExampleQueryId="false"/>
     </context>
